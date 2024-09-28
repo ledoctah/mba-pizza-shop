@@ -1,15 +1,24 @@
 import { ArrowRight, Search, X } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogTrigger } from '@/components/ui/dialog';
 import { TableCell, TableRow } from '@/components/ui/table';
+
+import OrderDetails from './order-details';
 
 export function OrderTableRow() {
   return (
     <TableRow>
       <TableCell>
-        <Button aria-label="Detalhes do pedido" variant="outline" size="xs">
-          <Search className="h-3 w-3" aria-label="Detalhes do pedido" />
-        </Button>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button aria-label="Detalhes do pedido" variant="outline" size="xs">
+              <Search className="h-3 w-3" aria-label="Detalhes do pedido" />
+            </Button>
+          </DialogTrigger>
+
+          <OrderDetails />
+        </Dialog>
       </TableCell>
       <TableCell className="font-mono text-xs font-medium">
         821e327180fdsa2f
