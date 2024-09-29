@@ -6,8 +6,10 @@ enum OrderStatusEnum {
   delivered = 'Entregue',
 }
 
+export type OrderStatusType = keyof typeof OrderStatusEnum;
+
 export interface OrderStatusProps {
-  status: keyof typeof OrderStatusEnum;
+  status: OrderStatusType;
 }
 
 export function OrderStatus({ status }: OrderStatusProps) {
